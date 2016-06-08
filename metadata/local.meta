@@ -1,0 +1,39 @@
+[app/ui]
+version = 6.4.0
+modtime = 1463932978.749541000
+
+[app/launcher]
+version = 6.4.0
+modtime = 1463932978.751863000
+
+[views/case_overview]
+owner = admin
+version = 6.4.0
+modtime = 1463935670.299774000
+
+[macros/plaso_case_indexes]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.4.0
+modtime = 1463937249.987609000
+
+[savedsearches/Colorized%20Super%20Timeline%20Detail]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.4.0
+modtime = 1463938852.069162000
+
+[views/colorized_super_timeline_detail_form]
+owner = admin
+version = 6.4.0
+modtime = 1463942057.852891000
+
+[views/colorized_super_timeline_detail]
+version = 6.4.0
+modtime = 1465030833.103148000
+
+[nav/default]
+version = 6.4.0
+modtime = 1465347297.960307000

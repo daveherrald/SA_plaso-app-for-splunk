@@ -1,0 +1,29 @@
+
+#colorized td.FILE_OPENING {
+	color: #ffffff;
+    background-color: #99FF66;
+}
+#colorized td.WEB_HISTORY {
+	color: #ffffff;
+    background-color: #ffff00;
+}
+#colorized td.DELETED_DATA {
+	color: #ffffff;
+    background-color: #000000;
+}
+#colorized td.EXECUTION {
+	color: #ffffff;
+    background-color: #ff0000;
+}
+#colorized td.DEVICE_or_USB_USAGE {
+	color: #ffffff;
+    background-color: #0000ff;
+}
+#colorized td.FOLDER_OPENING {
+	color: #ffffff;
+    background-color: #006600;
+}
+#colorized td.LOG_FILE {
+	color: #ffffff;
+    background-color: #808080;
+}

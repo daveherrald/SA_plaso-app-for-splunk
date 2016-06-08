@@ -1,0 +1,89 @@
+<form script="colorized_super_timeline.js" stylesheet="colorized_super_timeline.css">
+  <label>Colorized Super Timeline Detail</label>
+  <fieldset submitButton="false" autorun="true">
+    <input type="dropdown" token="supertimeline">
+      <label>Choose a Super Timeline</label>
+      <search>
+        <query>`plaso_case_indexes` | stats count by source  | fields source | rename source as supertimeline</query>
+      </search>
+      <fieldForLabel>source</fieldForLabel>
+      <fieldForValue>supertimeline</fieldForValue>
+    </input>
+    <input type="multiselect" token="extracted_sourcetype">
+      <label>Super Timeline Sourcetypes</label>
+      <search>
+        <query>`plaso_case_indexes` | stats values("extracted_sourcetype") as extracted_sourcetypes | mvexpand extracted_sourcetypes</query>
+        <earliest>0</earliest>
+      </search>
+      <fieldForLabel>extracted_sourcetype</fieldForLabel>
+      <fieldForValue>extracted_sourcetypes</fieldForValue>
+      <prefix>(</prefix>
+      <suffix>)</suffix>
+      <valuePrefix>extracted_sourcetype ="</valuePrefix>
+      <valueSuffix>"</valueSuffix>
+      <delimiter> OR </delimiter>
+      <choice value="*">Any</choice>
+      <default>*</default>
+    </input>
+    <input type="time" token="time_token" searchWhenChanged="true">
+      <label>Select a time:</label>
+      <default>
+        <earliest>0</earliest>
+        <latest></latest>
+      </default>
+    </input>
+    <input type="link" token="unused" searchWhenChanged="true">
+      <label>Column Selector</label>
+      <choice value="show">Show</choice>
+      <choice value="hide">Hide</choice>
+      <default>Hide</default>
+      <change>
+        <condition value="show">
+          <set token="showColSelector">true</set>
+        </condition>
+        <condition value="hide">
+          <unset token="showColSelector"></unset>
+        </condition>
+      </change>
+      <initialValue>Hide</initialValue>
+    </input>
+    <input type="checkbox" token="columns_xbox1" searchWhenChanged="true" depends="$showColSelector$">
+      <label>Super Timeline Columns</label>
+      <choice value="date">date</choice>
+      <choice value="time">time</choice>
+      <choice value="timezone">timezone</choice>
+      <choice value="MACB">MACB</choice>
+      <choice value="extracted_source">extracted_source</choice>
+      <choice value="extracted_sourcetype">extracted_sourcetype</choice>
+      <choice value="type">type</choice>
+      <choice value="user">user</choice>
+      <choice value="extracted_host">extracted_host</choice>
+      <choice value="short">short</choice>
+      <choice value="desc">desc</choice>
+      <choice value="version">version</choice>
+      <choice value="filename">filename</choice>
+      <choice value="inode">inode</choice>
+      <choice value="notes">notes</choice>
+      <choice value="format">format</choice>
+      <choice value="extra">extra</choice>
+      <initialValue>date,time,timezone,MACB,extracted_source,extracted_sourcetype,type,user,extracted_host,short,desc,version,filename,inode,notes,format,extra</initialValue>
+      <delimiter> </delimiter>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table id="colorized">
+        <search>
+          <query>`plaso_case_indexes` source="$supertimeline$" $extracted_sourcetype$ | reverse | table $columns_xbox1$</query>
+          <earliest>$time_token.earliest$</earliest>
+          <latest>$time_token.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>
