@@ -1,10 +1,10 @@
 
 #colorized td.FILE_OPENING {
-	color: #ffffff;
+	color: #000000;
     background-color: #99FF66;
 }
 #colorized td.WEB_HISTORY {
-	color: #ffffff;
+	color: #000000;
     background-color: #ffff00;
 }
 #colorized td.DELETED_DATA {
@@ -24,6 +24,41 @@
     background-color: #006600;
 }
 #colorized td.LOG_FILE {
+	color: #ffffff;
+    background-color: #808080;
+}
+
+#colorized td.FILE_OPENING {
+	color: #ffffff;
+    background-color: #99FF66;
+}
+
+
+#colorkey td.FILE_OPENING {
+	color: #000000;
+    background-color: #99FF66;
+}
+#colorkey td.WEB_HISTORY {
+	color: #000000;
+    background-color: #ffff00;
+}
+#colorkey td.DELETED_DATA {
+	color: #ffffff;
+    background-color: #000000;
+}
+#colorkey td.EXECUTION {
+	color: #ffffff;
+    background-color: #ff0000;
+}
+#colorkey td.DEVICE_or_USB_USAGE {
+	color: #ffffff;
+    background-color: #0000ff;
+}
+#colorkey td.FOLDER_OPENING {
+	color: #ffffff;
+    background-color: #006600;
+}
+#colorkey td.LOG_FILE {
 	color: #ffffff;
     background-color: #808080;
 }

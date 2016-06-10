@@ -86,4 +86,32 @@
       </table>
     </panel>
   </row>
+  <row>
+    <html>
+      <h3> Color Key: </h3>
+     <table id="colorkey">
+       <tr>
+         <td class="FILE_OPENING">FILE OPENING</td>
+       </tr>
+       <tr>
+         <td class="WEB_HISTORY">WEB HISTORY</td>
+       </tr>
+       <tr>
+         <td class="DELETED_DATA">DELETED DATA</td>
+       </tr>
+       <tr>
+         <td class="EXECUTION">EXECUTION</td>
+       </tr>
+       <tr>
+         <td class="DEVICE_or_USB_USAGE">DEVICE or USB USAGE</td>
+       </tr>
+       <tr>
+         <td class="FOLDER_OPENING">FOLDER OPENING</td>
+       </tr>
+       <tr>
+         <td class="LOG_FILE">LOG FILE</td>
+       </tr>
+     </table>
+    </html>
+  </row>
 </form>
