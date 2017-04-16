@@ -1,4 +1,4 @@
-SA_plaso-app-for-splunk v0.1
+SA_plaso-app-for-splunk v0.2
 ----------------------------	
 	
 	Author: Dave Herrald 
@@ -7,8 +7,9 @@ SA_plaso-app-for-splunk v0.1
 Updates 
 ----------------------------
 
-	0.1
+	0.2
 	-----
+	Merged pull request 1, adding ad-hoc search to the colorized super timeline view.
 
 
 Using this app
