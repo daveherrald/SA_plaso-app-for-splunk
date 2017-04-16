@@ -1,6 +1,6 @@
 <form script="colorized_super_timeline.js" stylesheet="colorized_super_timeline.css">
   <label>Colorized Super Timeline Detail</label>
-  <fieldset submitButton="false" autorun="true">
+  <fieldset submitButton="false" autoRun="true">
     <input type="dropdown" token="supertimeline">
       <label>Choose a Super Timeline</label>
       <search>
@@ -69,12 +69,16 @@
       <initialValue>date,time,timezone,MACB,extracted_source,extracted_sourcetype,type,user,extracted_host,short,desc,version,filename,inode,notes,format,extra</initialValue>
       <delimiter> </delimiter>
     </input>
+    <input type="text" token="searchText">
+      <label>Text to Search</label>
+      <default>*</default>
+    </input>
   </fieldset>
   <row>
     <panel>
       <table id="colorized">
         <search>
-          <query>`plaso_case_indexes` source="$supertimeline$" $extracted_sourcetype$ | reverse | table $columns_xbox1$</query>
+          <query>`plaso_case_indexes` source="$supertimeline$" $extracted_sourcetype$ $searchText$| reverse | table $columns_xbox1$</query>
           <earliest>$time_token.earliest$</earliest>
           <latest>$time_token.latest$</latest>
         </search>
